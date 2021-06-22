@@ -1,7 +1,10 @@
+import './loadEnv'
+import 'reflect-metadata'
 import express, { Express } from 'express'
 import helmet from 'helmet'
 import cors from 'cors'
 import morgan from 'morgan'
+import { router } from './routes'
 
 export class App {
   readonly core: Express
@@ -9,15 +12,18 @@ export class App {
   constructor() {
     this.core = express()
 
-    this.intializeMiddlewares()
-    // this.intializeRoutes()
+    this._initializeMiddlewares()
+    this._initializeRouter()
   }
 
-  private intializeMiddlewares(): void {
+  private _initializeMiddlewares() {
+    this.core.use(express.json())
     this.core.use(helmet())
     this.core.use(cors())
     this.core.use(morgan('dev'))
   }
 
-  // private initializeRoutes(): void {}
+  private _initializeRouter() {
+    this.core.use(router)
+  }
 }
