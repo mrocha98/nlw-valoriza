@@ -1,10 +1,10 @@
-import './loadEnv'
+import '@/loadEnv'
 import 'reflect-metadata'
 import express, { Express } from 'express'
 import helmet from 'helmet'
 import cors from 'cors'
 import morgan from 'morgan'
-import { router } from './routes'
+import { router } from '@/routes'
 
 export class App {
   readonly core: Express

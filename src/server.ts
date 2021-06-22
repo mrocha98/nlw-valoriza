@@ -1,5 +1,5 @@
-import { App } from './app'
-import { getConnection } from './infra/database/connection'
+import { App } from '@/app'
+import { getConnection } from '@/infra/database/connection'
 
 const PORT = process.env.PORT || 5000
 

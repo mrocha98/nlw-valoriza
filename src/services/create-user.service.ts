@@ -1,5 +1,5 @@
 import { getCustomRepository } from 'typeorm'
-import { UsersRepository } from '../repositories/users.repository'
+import { UsersRepository } from '@/repositories/users.repository'
 
 interface CreateUserDto {
   name: string
